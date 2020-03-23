@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "deploy": "sfdx force:source:convert && sfdx force:mdapi:deploy -d $(ls | grep metadataPackage_ | tail -n 1) && rm -rf metadataPackage_*"
+    }
+}
