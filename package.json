@@ -1,5 +1,7 @@
 {
     "scripts": {
-        "deploy": "sfdx force:source:convert && sfdx force:mdapi:deploy -d $(ls | grep metadataPackage_ | tail -n 1) && rm -rf metadataPackage_*"
+        "deploy": "sfdx force:source:convert && sfdx force:mdapi:deploy -d $(ls | grep metadataPackage_ | tail -n 1) && rm -rf metadataPackage_*",
+        "count": "wc force-app/main/default/lwc/lwcMaxSize/*",
+        "delete": "sfdx force:mdapi:deploy -d scripts/delete"
     }
 }

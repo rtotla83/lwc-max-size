@@ -1,0 +1,10 @@
+<Package>
+    <types>
+        <name>LightningComponentBundle</name>
+        <members>lwcMaxSize</members>
+    </types>
+    <types>
+        <name>FlexiPage</name>
+        <members>Home</members>
+    </types>
+</Package>
