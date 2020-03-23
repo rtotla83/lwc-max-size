@@ -1,17 +1,17 @@
 const { writeFileSync } = require('fs');
 
-const maxSize = 131072;
+const MAX_SIZE = 131072;
 
-const htmlFill = `a`.repeat(maxSize - `<template></template>`.length)
+const htmlFill = `a`.repeat(MAX_SIZE - `<template></template>`.length);
 const html = `<template>${htmlFill}</template>`;
 writeFileSync(`force-app/main/default/lwc/lwcMaxSize/lwcMaxSize.html`, html, 'utf8');
 
-const jsBase = `import { LightningElement } from 'lwc';
+const PLACEHOLDER = `{PLACEHOLDER}`;
+const JS_BASE = `import { LightningElement } from 'lwc';
 export default class LwcMaxSize extends LightningElement {}
-var ;`;
-const jsFill = `a`.repeat(maxSize - jsBase.length);
-const js = `import { LightningElement } from 'lwc';
-export default class LwcMaxSize extends LightningElement {}
-var ${jsFill};`;
+var ${PLACEHOLDER};`;
+const JS_BASE_LENGTH = JS_BASE.length - PLACEHOLDER.length;
+const JS_FILL = `a`.repeat(MAX_SIZE - JS_BASE_LENGTH);
+const js = JS_BASE.replace(PLACEHOLDER, JS_FILL);
 writeFileSync(`force-app/main/default/lwc/lwcMaxSize/lwcMaxSize.js`, js, 'utf8');
 
