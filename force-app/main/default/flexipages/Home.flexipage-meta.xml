@@ -4,6 +4,9 @@
         <componentInstances>
             <componentName>lwcMaxSize</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentName>jsImport</componentName>
+        </componentInstances>
         <name>top</name>
         <type>Region</type>
     </flexiPageRegions>
